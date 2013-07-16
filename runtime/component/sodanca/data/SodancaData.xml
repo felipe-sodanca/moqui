@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml type="seed">
+	<AppModules moduleId="PARTY" moduleDescription="Party"/>
+	<AppModules moduleId="ACCOUNTING" moduleDescription="Accounting"/>
+	<AppModules moduleId="FACILITY" moduleDescription="Facility"/>
+	<AppModules moduleId="ORDER" moduleDescription="Order"/>
+	<AppModules moduleId="CATALOG" moduleDescription="Catalog"/>
+	<AppModules moduleId="INVENTORY" moduleDescription="Inventory"/>
+	
+</entity-facade-xml>

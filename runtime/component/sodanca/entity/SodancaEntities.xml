@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-1.3.xsd">
+	<entity entity-name="AppModules" package-name="sodanca">
+		<field name="moduleId" type="id" is-pk="true"/>
+		<field name="moduleDescription" type="text-short"/>
+		
+	</entity>
+	<entity entity-name="party.party" package-name="sodanca">
+		<field name="partyId" type="id" is-pk="true" />
+		<field name="typeId" type="id"/>
+		<field name="partyNumber" type="text-medium"/>
+		<field name="statusId" type="id"/>
+		<field name="firstName" type="text-short"/>
+		<field name="middleName" type="text-short"/>
+		<field name="lastName" type="text-short"/>
+		<field name="companyName" type="text-medium"/>
+		<field name="legalName" type="text-medium"/>
+		<field name="validationName" type="text-short"/>
+		<field name="taxNumber" type="text-short"/>
+	</entity>
+    <entity entity-name="PostalAddress" package-name="mantle.party.contact">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="toName" type="text-medium"/>
+        <field name="attnName" type="text-medium"/>
+        <field name="address1" type="text-medium"/>
+        <field name="address2" type="text-medium"/>
+        <field name="unitNumber" type="text-medium"/>
+        <field name="directions" type="text-long"/>
+        <field name="city" type="text-medium"/>
+        <field name="countyGeoId" type="id"/>
+        <field name="stateProvinceGeoId" type="id"/>
+        <field name="countryGeoId" type="id"/>
+        <field name="postalCode" type="text-short"/>
+        <field name="postalCodeExt" type="text-short"/>
+        <field name="postalCodeGeoId" type="id"/>
+        <field name="geoPointId" type="id"/>
+        <field name="commercial" type="text-indicator"/>
+        <field name="accessCode" type="text-short"/>
+        <relationship type="one" related-entity-name="mantle.party.contact.ContactMech"/>
+        <relationship type="one" title="Country" related-entity-name="moqui.basic.Geo">
+            <key-map field-name="countryGeoId"/>
+        </relationship>
+        <relationship type="one" title="StateProvince" related-entity-name="moqui.basic.Geo">
+            <key-map field-name="stateProvinceGeoId"/>
+        </relationship>
+        <relationship type="one" title="County" related-entity-name="moqui.basic.Geo">
+            <key-map field-name="countyGeoId"/>
+        </relationship>
+        <relationship type="one" title="PostalCode" related-entity-name="moqui.basic.Geo">
+            <key-map field-name="postalCodeGeoId"/>
+        </relationship>
+        <relationship type="one" related-entity-name="GeoPoint"/>
+        <index name="CITY_IDX"><index-field name="city"/></index>
+        <index name="POSTAL_CODE_IDX"><index-field name="postalCode"/></index>
+    </entity>
+      <entity entity-name="party.Phone" package-name="mantle.party.contact">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="countryCode" type="text-short"/>
+        <field name="areaCode" type="text-short"/>
+        <field name="contactNumber" type="text-short"/>
+        <field name="extension" type="text-short"/>
+        <field name="askForName" type="text-medium"/>
+        <relationship type="one" related-entity-name="mantle.party.contact.ContactMech"/>
+        <index name="AREA_CONTACT_IDX"><index-field name="areaCode"/><index-field name="contactNumber"/></index>
+    </entity>
+    <entity>
+        <
+    </entity>
+
+    
+</entities>

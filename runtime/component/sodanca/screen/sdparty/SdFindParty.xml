@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<screen require-authentication="anonymous-all">
+    <transition name="findParty">
+        <default-response url="."/>
+    </transition>
+    <transition name="createParty">
+        <service-call name="create#Party"/><!-- "create#Tutorial"/>-->
+        <default-response url="."/>
+    </transition>
+    <actions>
+        <entity-find entity-name="Party"
+                     list="partyList">
+            <search-form-inputs/>
+        </entity-find>
+    </actions>
+    <widgets>
+        <container-dialog id="CreatePartyDialog"
+                          button-text="Create Party">
+            <form-single name="CreateParty"
+             transition="createParty">
+                <auto-fields-entity entity-name="Party" field-type="edit"/>
+                
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <form-list name="ListParties" list="partyList"
+                   transition="findParty">
+            <auto-fields-entity entity-name="Party"
+                                field-type="find-display"/>
+            <field name="description">
+                <header-field show-order-by="true">
+                    <text-find hide-options="true"/>
+                </header-field>
+                <default-field>
+                    <display/>
+                </default-field>
+            </field>
+        </form-list>
+    </widgets>
+</screen>
