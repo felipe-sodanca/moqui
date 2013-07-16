@@ -21,8 +21,14 @@ This Work includes contributions authored by David E. Jones, not as a
                          menu-title="Example" menu-index="8"/>
         <subscreens-item name="tools" location="component://tools/screen/Tools.xml"
                          menu-title="Tools" menu-index="9"/>
+        <subscreens-item name="sodanca" location="component://sodanca/screen/SdParty.xml"
+        				 menu-title="Sodanca" menu-index="7"/>
+     	<subscreens-item name="tutorial" location="component://tutorial/screen/Tutorial.xml"
+     					 menu-item="Tutorial" menu-index="6"/>
     </subscreens>
-
+	
+	
+	
     <widgets>
         <container-panel id="apps-container">
             <panel-header>
@@ -54,7 +60,7 @@ This Work includes contributions authored by David E. Jones, not as a
             </panel-center>
             <panel-footer>
                 <render-mode><text type="html"><![CDATA[<h6>Built on <a href="http://www.moqui.org/">Moqui</a></h6>]]></text></render-mode>
-                <render-mode><text type="html"><![CDATA[<div><a href="http://sourceforge.net/projects/moqui/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302949&type=10" alt="SourceForge.net" width="80" height="15"></a></div>]]></text></render-mode>
+                <render-mode><text type="html"><![CDATA[<div><a href="http://sourceforge.net/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302949&type=10" alt="SourceForge.net" width="80" height="15"></a></div>]]></text></render-mode>
             </panel-footer>
         </container-panel>
     </widgets>
